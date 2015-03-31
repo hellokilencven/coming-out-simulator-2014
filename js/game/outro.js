@@ -339,9 +339,9 @@ function Tell_Me_A_Half_Truth(message){
 		"Egy tükörkép rólad, csak fordítva...": function(message){
 			$.outro_convo_half_truth = 1;
 			p(message);
-			N(Hát, a tükörképek fordítottak.");
-			p("Tudod hogyan értem.");
-			N("De amúgy ja, cseréltünk ám tapasztalatokat.");
+			N("Hát, a tükörképek fordítottak.");
+			p("Tudod, hogyan értem.");
+			N("De amúgy ja, cseréltünk tapasztalatokat.");
 			Tell_Me_A_Half_Truth_2();
 		},
 		"Szóval megmutattátok egymásnak az ellenkező nem szépségeit?": function(message){
