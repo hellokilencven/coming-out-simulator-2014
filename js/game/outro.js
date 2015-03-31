@@ -463,9 +463,9 @@ function Finale_2(){
 	}else if($.father_oblivious==false){
 		N("Az elolvasott smseim. Hogy iskolát kellett váltanom. Az összes szóbeli sérelem.");
 	}else if($.changing_schools){
-		N("Az elolvasott smseim. Hogy iskolát kellett váltanom. A "melegrehab" ötlete Clairrel.");	
+		N("Az elolvasott smseim. Hogy iskolát kellett váltanom. A 'melegrehab' ötlete Clairrel.");	
 	}else{
-		N("Az elolvasott smseim. Hogy nincs több szabad órám iskola után. A "melegrehab" ötlete Clairrel.");
+		N("Az elolvasott smseim. Hogy nincs több szabad órám iskola után. A 'melegrehab' ötlete Clairrel.");
 	}
 
 	N("A dolog Stockholm-szindrómás értelmében az egészért hálás vagyok.");
