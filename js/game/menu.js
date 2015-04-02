@@ -200,10 +200,10 @@ function Credits(message){
 	if($.asked_about){
 		SipCoffee(message);
 	}else{
-		SipCoffee("Te ki vagy?");
+		SipCoffee("A borzasztó hosszú háttérsztori érdekel!");
 	}
 	
-	N("Ó, milyen goromba vagyok! Hadd mutatkozzam be.");
+	N("Oké, akkor először hadd mutatkozzam be.");
 	N("Helló, a nevem Nick Case.");
 	N("Ez nem a hivatalos nevem, ez az IGAZI nevem.");
 
