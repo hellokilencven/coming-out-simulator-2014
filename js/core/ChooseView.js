@@ -64,7 +64,8 @@ subscribe("choose", function(choices){
 		var buttonWidth = button.offsetWidth;
 		button.setAttribute('data-width', buttonWidth);
 		button.style.position = 'relative';
-		if (buttonWidth > 360) {
+		if (buttonWidth > 364) {
+			button.style.transition = 'margin ' + ((button.getAttribute('data-width') - 360) / 100) + 's ease-in-out';
 			button.onmouseover = (function() { this.style.marginLeft = (360 - this.getAttribute('data-width')) + 'px' });
 			button.onmouseout = (function () { this.style.marginLeft = '0px' });
 		}
