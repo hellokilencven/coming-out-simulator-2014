@@ -49,6 +49,7 @@ subscribe("choose", function(choices){
 		var label = labels[i];
 		var button = document.createElement("div");
 		button.innerHTML = label;
+				
 		button.onclick = (function(callback,message){
 			return function(){
 				choicesDOM.innerHTML = "";
@@ -57,6 +58,16 @@ subscribe("choose", function(choices){
 		})(choices[label], label);
 
 		choicesDOM.appendChild(button);
+		
+		button.style.position = 'absolute';
+		button.style.width = 'auto';
+		var buttonWidth = button.offsetWidth;
+		button.setAttribute('data-width', buttonWidth);
+		button.style.position = 'relative';
+		if (buttonWidth > 360) {
+			button.onmouseover = (function() { this.style.marginLeft = (360 - this.getAttribute('data-width')) + 'px' });
+			button.onmouseout = (function () { this.style.marginLeft = '0px' });
+		}
 
 		(function(button){
 			setTimeout(function(){
