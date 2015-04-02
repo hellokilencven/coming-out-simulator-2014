@@ -259,7 +259,7 @@ function About(message){
 	}
 	
 	p("Hát persze, te kis egoista.");
-	N("Természetesen.");
+	N("...kösz.");
 
 	if($.asked_credits){
 		p("Habár ha tényleg az lennél, az igazi nevedet használnád.");
