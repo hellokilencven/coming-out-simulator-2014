@@ -18,11 +18,11 @@ function Start(){
 	N("Mit szeretnél csinálni?");
 
 	Choose({
-		"Szeretnék játszani ezzel az, öhmm... izével.": Play,
-		"Te ki vagy? (Háttérsztori)": function(){
+		"Szerinted? Szeretnék játszani ezzel az, öhmm... izével.": Play,
+		"A borzasztó hosszú háttérsztori érdekel!": function(){
 			Credits("Te ki vagy?");
 		},
-		"Hmm, mesélj a játékról! (Játékleírás)": function(){
+		"Mondj el mindent erről a játékról!": function(){
 			About("Hmm, mesélj a játékról!");
 		}
 	});
@@ -75,7 +75,7 @@ function Play(message){
 			N("Nem.");
 			Play_2();
 		},
-		"Nyilvánvalóan veled, miközben a Redditen lógsz egy Starbucksban.": function(message){
+		"Nyilvánvalóan veled, miközben gépezel egy Starbucksban.": function(message){
 			$.main_menu_convo_1 = 2;
 
 			p(message);
