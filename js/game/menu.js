@@ -20,10 +20,10 @@ function Start(){
 	Choose({
 		"Szerinted? Szeretnék játszani ezzel az, öhmm... izével.": Play,
 		"A borzasztó hosszú háttérsztori érdekel!": function(){
-			Credits("Te ki vagy?");
+			Credits("A borzasztó hosszú háttérsztori érdekel!");
 		},
 		"Mondj el mindent erről a játékról!": function(){
-			About("Hmm, mesélj a játékról!");
+			About("Mondj el mindent erről a játékról!");
 		}
 	});
 
