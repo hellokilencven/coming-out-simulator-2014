@@ -270,8 +270,8 @@ function About(message){
 	N("Ezt a játékot egy játékkészítő versenyre csináltam. Jó kifogás volt a gép előtt ülésre, és biztosított egy határidőt is.");
 	p("Gondolom az utolsó pillanatig halogattad az elküldését.");
 	N("Hát... ja.");
-	N("Jut eszembe, ez a játék nem áll szerzői jogvédelem alatt és nyilvánosan hozzáférhető tárhelyen van tárolva.");
-	N("Bárki letöltheti és módosíthatja, mint most a Hello90 blog. Nyílt forráskódú, akárcsak a szexualitásom.");
+	N("Jut eszembe, ezt a játékot bárki letöltheti és módosíthatja, mint most a Hello90 blog.");
+	N("Nyílt forráskódú, akárcsak a szexualitásom.");
 
 	p("SASTAPS!");
 	N("Akarsz még hallani ilyen programozós szóviccet?");
