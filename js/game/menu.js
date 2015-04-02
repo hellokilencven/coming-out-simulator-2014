@@ -274,8 +274,8 @@ function About(message){
 	N("Nyílt forráskódú, akárcsak a szexualitásom.");
 
 	p("SASTAPS!");
-	N("Akarsz még hallani ilyen programozós szóviccet?");
-	p("Kösz, nem. Akkor már inkább a Sas-kabaré.");
+	N("Akarsz még hallani programozós vicceket?");
+	p("Kösz, de most inkább... nem.");
 
 	if($.asked_credits){
 		Choose({
