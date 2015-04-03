@@ -259,7 +259,7 @@ function Hiding_2(message){
 		j("Te is azt kívánod magadban, hogy bárcsak elmondhatnád nekik.");
 		j("Tedd meg.");
 	}else{
-		j("Nicky.");
+		j("Nicky...");
 	}
 	j("Mondd el nekik ma este.");
 
