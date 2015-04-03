@@ -12,13 +12,13 @@ function Start(){
 
 	//////////////////////////////
 
-	N("<b>COMING OUT SIMULATOR 2014</b>");
-	N("Egy valós eseményeken alapuló játék kiegészítve kitalált dolgokkal.");
+	N("<b>COMING OUT SIMULATOR 2015</b>");
+	N("Ez egy valós eseményeken alapuló játék kiegészítve kitalált dolgokkal.");
 	N("Helló és üdv a játékban!");
 	N("Mit szeretnél csinálni?");
 
 	Choose({
-		"Szerinted? Szeretnék játszani ezzel az, öhmm... izével.": Play,
+		"Szerinted? Szeretnék játszani ezzel a... izével.": Play,
 		"A rettentő hosszú háttérsztori érdekel!": function(){
 			Credits("A rettentő hosszú háttérsztori érdekel!");
 		},
