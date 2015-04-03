@@ -241,9 +241,9 @@ function Hiding_2(message){
 	}
 
 	j("Talán csak máshogy kellene hozzáállnod a beszélgetéshez.");
-	j("Velem is mindig csak üzenetekben kommunikálsz telefonálás helyett.");
+	j("Velem is mindig csak üzenetekben kommunikálsz, telefonálás helyett.");
 	j("...mert azt gondolod, hogy az emberek nem szívesen hallgatnának végig.");
-	j("De ők a szüleid és mindig szeretni fognak téged.");
+	j("De ők a szüleid, és mindig szeretni fognak téged.");
 
 	n("Bár így lenne...");
 
