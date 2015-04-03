@@ -8,22 +8,22 @@ function Start(){
 	Show("cup","cup_steam",{x:44,y:359});
 	Show("nicky","coffee_nicky_still");
 
-	PlaySound("bg","coffeehouse",{loop:-1, volume:0.7});
+	PlaySound("bg","coffeehouse",{loop:-1, volume:0.3});
 
 	//////////////////////////////
 
-	N("<b>COMING OUT SIMULATOR 2014</b>");
-	N("Egy valós eseményeken alapuló játék kiegészítve kitalált dolgokkal.");
-	N("Helló játékos! Üdv a játékban.");
+	N("<b>COMING OUT SIMULATOR 2015</b>");
+	N("Ez egy valós eseményeken alapuló játék kiegészítve kitalált dolgokkal.");
+	N("Helló és üdv a játékban!");
 	N("Mit szeretnél csinálni?");
 
 	Choose({
-		"Szeretnék játszani ezzel az, öhmm... izével.": Play,
-		"Te ki vagy? (Háttérsztori)": function(){
-			Credits("Who are you?");
+		"Szerinted? Szeretnék játszani ezzel a... izével.": Play,
+		"A rettentő hosszú háttérsztori érdekel!": function(){
+			Credits("A rettentő hosszú háttérsztori érdekel!");
 		},
-		"Hmm, mesélj a játékról! (Játékleírás)": function(){
-			About("Hm, tell me more.");
+		"Mondj el mindent erről a játékról!": function(){
+			About("Mondj el mindent erről a játékról!");
 		}
 	});
 
@@ -45,55 +45,55 @@ function Play(message){
 	// Asked neither
 	if(!$.asked_about && !$.asked_credits){
 		N("Remek! Akkor vágjunk is bele!");
-		N("Nem volt kedved szórakozni a háttérsztori, vagy a játékleírás olvasásával igaz?");
+		N("Nem volt kedved szórakozni a háttérsztori, vagy a játékleírás olvasásával, igaz?");
 		p("Hát...");
 		N("Oké, oké; nem baj.");
 	}
 	// Asked both
 	if($.asked_about && $.asked_credits){
 		p(". . .");
-		p("Why did you make that a clickable option, when it was the only option left.");
+		p("Miért lehet többféle válaszra is klikkelni, ha a játék vége ugyanaz?");
 		N("Gőzöm sincs.");
 	// Asked either
 	}else if($.asked_about || $.asked_credits){
 		N("Rendben.");
 	}
 
-	N("Utazzunk vissza az időben négy évet, egészen 2010-ig...");
-	p("Ez NÉGY éve volt?!");
+	N("Utazzunk vissza az időben öt évet, egészen 2010-ig...");
+	p("ÖT ÉVET fogsz elmesélni??");
 	N("...addig az estéig, ami örökre megváltoztatta az életemet.");
 
-	N("Mondd csak, kedves játékos, hogy képzeled ennek az egésznek a végkifejletét?");
+	N("Mondd csak, hogy képzeled el a játék végét?");
 
 	Choose({
-		"Virágokkal, szivárvánnyal és meleg unikornisokkal?": function(message){
+		"Virágokkal, szivárvánnyal és meleg unikornisokkal.": function(message){
 			$.main_menu_convo_1 = 1;
 
 			p(message);
-			N("Igen, pontosan így fog végződni a sztori.");
+			N("Igen, pontosan így fog végződni a sztori!");
 			p("Tényleg?!");
 			N("Nem.");
 			Play_2();
 		},
-		"Nyilvánvalóan veled, miközben a Redditen lógsz egy Starbucksban.": function(message){
+		"Egy kávézóban fogsz ücsörögni a laptopoddal.": function(message){
 			$.main_menu_convo_1 = 2;
 
 			p(message);
-			N("Hé, én programozok ezen a laptopon. Így készült el az előtörténetemből ez a játék is, amivel te most éppen játszol.");
+			N("Hé, én programozok ezen a laptopon. Így készült el ez a játék is, amivel most játszol.");
 			p("Mintha halogatnád a kezdést...");
 			N("És ezt pont te mondod?");
 			p("Touché.");
 			N("Egyébként...");
 			Play_2();
 		},
-		"MINDEN VÉRBEN FOG ÚSZNI!!": function(message){
+		"MINDENT BEBORÍT MAJD A VÉÉÉR!!": function(message){
 			$.main_menu_convo_1 = 3;
 
 			p(message);
-			N("Uh, kicsit eltúlzod a dolgod, a történetem azért nem ennyire tragikus.");
-			N("Although that's kind of a glass one-hundredths-full interpretation.");
-			p("vééééééééér");
-			N("Egyébként...");
+			N("Hű, kicsit eltúlzod a dolgot.");
+			N("A történetem azért nem ENNYIRE tragikus...");
+			p("VÉÉÉÉR!!");
+			N("Haver, kicsit túl sok horrort néztél...");
 			Play_2();
 		}
 	});
@@ -104,36 +104,36 @@ function Play_2(){
 
 	if(!$.asked_about){
 		N("Ha nem ugrottad át a játékleírást, már tudod, hogy ez egy nagyon személyes sztori.");
-		p("Öhm, jaa...");
+		p("Ööö, jaa...");
 	}
 
-	N("Ez a játék azokat a dialógusokat tartalmazza, amiket én folytattam a szüleimmel és az exbarátommal.");
-	N("Olyan dolgokkal, amiket mi mondtunk, amit kellett volna mondanunk és amit soha nem mondtunk.");
+	N("Ezzel a játékkal azokat a párbeszédeket lehet újrajátszani, amiket én folytattam a szüleimmel és az exbarátommal.");
+	N("Olyan dolgok hangzanak majd el, amiket kimondtunk, amit ki kellett volna mondanunk, és amiket soha nem kellett volna kimondanunk..");
 	N("Nem számít, hogy melyik melyik.");
-	N("Többé már nem.");
+	N("Ennyi idő után már nem...");
 
 	Choose({
-		"De nem lehet megnyerni egy játékot helyes válaszok nélkül!": function(message){
+		"De egy játékot sem lehet megnyerni helyes válaszok nélkül. Gondolom ezt sem.": function(message){
 			$.main_menu_convo_2 = 2;
 
 			p(message);
-			N("Pontosan.");
+			N("Így van.");
 			p(". . .");
 			Play_3();
 		},
-		"Egy kicsit depressziós vagy, nem? Mármint ez eléggé lehangoló.": function(message){
+		"Kicsit depis vagy, nem? Ez a szöveg elég lehangoló.": function(message){
 			$.main_menu_convo_2 = 1;
 
 			p(message);
 			N("Az élet is ELÉGGÉ lehangoló.");
-			p("Szóval ez egy igen.");
+			p("Szóval depis vagy. Mondtam.");
 			Play_3();
 		},
-		"Szóval akkor ez az igaz történeten alapuló játék tele van hazugságokkal?": function(message){
+		"Akkor ez egy igaz történeten alapuló játék, ami tele van hazugságokkal?": function(message){
 			$.main_menu_convo_2 = 3;
 
 			p(message);
-			N("Még ha 100%-osan élethűek is a párbeszédek, akkor is lehet bármelyik 100%-ban kamu. ");
+			N("Mindegyik párbeszéd élethű, az is, ami teljes kamu. Nem az a fontos, hogy megtörtént, hanem hogy bármikor megtörténhet bárkivel.");
 			p(". . .");
 			Play_3();
 		}
@@ -143,16 +143,16 @@ function Play_2(){
 
 function Play_3(){
 
-	N("A játéksorán a 2010-es önmagammal fogsz játszani.");
+	N("A játék során a 2010-es énemmel fogsz játszani.");
 	if(!$.asked_credits){
 		N("Ha nem olvastad el a háttérsztorit, akkor annyit rólam, hogy a (még nem teljesen hivatalos) nevem Nick Case. Csak, hogy tudd.");
-		p("Öhm, oké.");
+		p("Ööö, oké.");
 	}
 
 	var whatISay;
 	switch($.main_menu_convo_1){
-		case 1: whatISay = "Ez a játék nem meleg unikornisokkal fog végződni. "; break;
-		case 2: whatISay = "Ez a játék egy előbújás, egy előtörténet és egy múlttal való kiegyezés egyben. "; break;
+		case 1: whatISay = "Ez a játék nem szívárványokon vágtató meleg unikornisokkal fog végződni. "; break;
+		case 2: whatISay = "Ez a játék egy előbújás története, a fejlődésnek és a múlttal való megbékélésnek a története. "; break;
 		case 3: whatISay = "Ez a játék nem vérrel, hanem könnyekkel fog végződni. "; break;
 	}
 	switch($.main_menu_convo_2){
@@ -182,8 +182,8 @@ function Play_3(){
 	
 	N("Amikor játszol...");
 	N("Bölcsen válogasd meg a szavaidat.");
-	N("Minden karakter fog emlékezni mindenre, amit nekik mondtál. Vagy nem mondtál.");
-	p("Jaa. Ennek ellenére te generáltad a választási lehetőségeimet a főmenüben.");
+	N("Minden karakter emlékezni fog mindenre, amit nekik mondtál. Vagy nem mondtál.");
+	p("Ja. Ennek ellenére te generáltad a választási lehetőségeimet a főmenüben.");
 	N("Nagyjából.");
 
 	N(". . .");
@@ -201,44 +201,44 @@ function Credits(message){
 	if($.asked_about){
 		SipCoffee(message);
 	}else{
-		SipCoffee("Who are you?");
+		SipCoffee("A borzasztó hosszú háttérsztori érdekel!");
 	}
 	
-	N("Ó, milyen goromba vagyok! Hadd mutatkozzam be.");
+	N("Oké, akkor először hadd mutatkozzam be.");
 	N("Helló, a nevem Nick Case.");
-	N("Ez nem a hivatalos nevem, ez az IGAZI nevem.");
+	N("Ez nem valami hivatásos nevem, ez az IGAZI nevem.");
 
 	p("Ez nagyon furcsa, haver.");
 	if($.asked_about){
-		p("Mintha az előbb azt mondtad volna, hogy ez a saját történeted, ugye?");
+		p("Mintha az előbb azt mondtad volna, hogy ez a saját történeted.");
 	}else{
-		p("Akkor te is csináltad ezt a játékot?");
+		p("Mindegy. Végül is akkor te csináltad ezt a játékot, ugye?");
 	}
 
-	N("Így van, írója, programozója és grafikusa vagyok egyben a Coming Out Simulator 2014-nek.");
+	N("Így van, írója, programozója, grafikusa és főszereplője vagyok a Coming Out Simulatornak.");
 
 	if($.asked_about){
 		p("Mindezt saját magadnak?");
 		p("Már mondtam és még mondani fogom...");
 		p("Nagyon nárcisztikus vagy.");
 		N("Nos, ez nem csak rólam szól.");
-		N("Egyébként a zajok és zenék különböző nyilvánosan hozzáférhető forrásokból származnak.");
+		N("Csak a zajokat és a zenéket csinálta más. Azokat csak úgy letöltöttem a netről.");
 	}else{
-		N("A zajok és zenék különböző nyilvánosan hozzáférhető forrásokból származnak.");
+		N("Csak a zajokat és a zenéket csinálta más. Azokat csak úgy letöltöttem a netről.");
 	}
 
-	N("Bár többnyira csak én vagyok a játék mögött...");
+	N("Bár többnyire a játék mögött csak én vagyok...");
 	N("...a sztori mögött sok ember van.");
 
 	if($.asked_about){
 		Choose({
-			"Ha már így szóba került, játszunk is akkor!": Play
+			"Ha már így szóba került, kezdjünk játszani!": Play
 		});
 	}else{
 		Choose({
-			"Most, hogy így ezt megbeszéltük, játszhatunk?": Play,
-			"Miért csináltad ezt meg? (Játékleírás)": function(){
-				About("Why'd you make this?");
+			"Most, hogy ezt megbeszéltük, akár játszhatnánk is.": Play,
+			"Miért csináltad meg ezt a játékot? (Játékleírás)": function(){
+				About("Miért csináltad meg ezt a játékot??");
 			}
 		});
 	}
@@ -252,31 +252,31 @@ function About(message){
 	SipCoffee(message);
 
 	if($.asked_credits){
-		N("Szerettem volna elmesélni a történetembet.");
+		N("Szerettem volna elmesélni a történetemet.");
 	}else{
 		N("Ez a játék...");
 		N("...több egy társalgás-szimulátornál, nekem ez tényleg...");
-		N("...iegy nagyon személyes történet.");
+		N("...egy nagyon személyes történet.");
 	}
 	
-	p("Természetesen. Te kis nárcisztikus.");
-	N("Hah, naná.");
+	p("Hát persze, te kis egoista.");
+	N("...kösz.");
 
 	if($.asked_credits){
-		p("Habár nem is, elvégre egy ha az lennél, az igazi nevedet használnád.");
+		p("Habár ha tényleg az lennél, az igazi nevedet használnád.");
 		N("Már mondtam neked hogy ez az IGAZI ne-..");
-		p("Okééé, okéé, felfogtam. Bizarr vagy.");
+		p("Okééé, okéé, felfogtam...");
 	}
 
-	N("Ezt a játékot a #Nar8 Game Jam-re csináltam. Jó kifogás volt a gép előtt ülésre és biztosított egy határidőt is.");
-	p("Gondolom az utolsó pillanatig halogattad az elküldését, ugye.");
-	N("Hát ja.");
-	N("Jut eszembe, ez a játék nem áll szerzői jogvédelem alatt, és nyilvánosan hozzáférhető tárhelyen van tárolva.");
+	N("Ezt a játékot egy játékkészítő versenyre csináltam. Jó kifogás volt a gép előtt ülésre, és biztosított egy határidőt is.");
+	p("Gondolom az utolsó pillanatig halogattad az elküldését.");
+	N("Hát... ja.");
+	N("Jut eszembe, ezt a játékot bárki letöltheti és módosíthatja, mint most a Hello90 blog.");
 	N("Nyílt forráskódú, akárcsak a szexualitásom.");
 
-	p("Jesszus, ez egy borzalmas szóvicc volt.");
-	N("Akarsz még hallani ilyen programozós szóviccet?");
-	p("Neeeeeeeeeeem.");
+	p("SASTAPS!");
+	N("Akarsz még hallani programozós vicceket?");
+	p("Kösz, de most inkább... nem.");
 
 	if($.asked_credits){
 		Choose({
@@ -284,9 +284,9 @@ function About(message){
 		});
 	}else{
 		Choose({
-			"Túl vagyunk a rossz szóvicceken is, most már játszhatunk végre?": Play,
-			"Szóval ki is vagy te? (Credits)": function(){
-				Credits("So who ARE you?");
+			"Túl vagyunk a rossz vicceken is, most már játszhatunk végre?": Play,
+			"Szóval ki is vagy te? (Háttérsztori)": function(){
+				Credits("Szóval ki is vagy te?");
 			}
 		});
 	}
