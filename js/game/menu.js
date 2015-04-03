@@ -103,7 +103,7 @@ function Play_2(){
 
 	if(!$.asked_about){
 		N("Ha nem ugrottad át a játékleírást, már tudod, hogy ez egy nagyon személyes sztori.");
-		p("Öhm, jaa...");
+		p("Ööö, jaa...");
 	}
 
 	N("Ezzel a játékkal azokat a párbeszédeket lehet újrajátszani, amiket én folytattam a szüleimmel és az exbarátommal.");
