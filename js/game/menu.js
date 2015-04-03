@@ -91,7 +91,7 @@ function Play(message){
 
 			p(message);
 			N("Hű, kicsit eltúlzod a dolgot.");
-			N("A történetem azért nem ENNYIRE tragikus...");
+			N("A történetem azért ENNYIRE nem tragikus.");
 			p("VÉÉÉÉR!!");
 			N("Haver, kicsit túl sok horrort néztél...");
 			Play_2();
@@ -290,8 +290,5 @@ function About(message){
 			}
 		});
 	}
-}
-function menu_End(){
-	Clear();
-	Start_Jack_1();
+	
 }
