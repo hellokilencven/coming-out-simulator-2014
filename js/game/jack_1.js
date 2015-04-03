@@ -19,12 +19,12 @@ function Start_Jack_1(){
 	/////////////////////////////
 
 	j("És amikor csak így egyszerűen kijelentette, hogy");
-	j("'Vettem egy légitársaságot';");
+	j("'Megvettem a légitársaságot.';");
 	j("...az valami zseniális volt!");
 	n("Jaa, szóval ezt mondta!");
-	n("Én lemaradtam róla, de a nézőtéren mindenki ezen röhögött.");
-	j("Akkor vagy nézd ezentúl felirattal a filmeket, vagy pedig moss fület gyakrabban.");
-	j("Tényleg, te hogyan értelmezted a pörgettyűs jelenetet a végén? Szerinted azt is csak álmodta, vagy pedig már ébren volt?");
+	n("Kicsit elbambultam, csak azt vettem észre, hogy rajtam kívül mindenki röhög.");
+	j("Legközelebb ne a moziban aludj, hanem előtte éjszaka.");
+	j("Amúgy szerinted mi volt a búgócsigás jelenetet a végén? Azt álmodta vagy akkor már ébren volt?");
 
 	Choose({
 		"Csak álmodta.": Inception_Dream,
@@ -40,8 +40,8 @@ function Inception_Dream(message){
 
 	n(message);
 	j("Szóval szerinted Saito ajánlata a körözés megszűntetéséről csak hazugság volt?");
-	n("Egy nagy, kövér hazugság.");
-	j("Kicsit depressziós vagy, nem?");
+	n("Igen, az ilyen mindig hazugság...");
+	j("Jaj már. Már megint depis vagy?");
 
 	Choose({
 		"A szívem szinte szétszakad a szüntelen szenvedéstől.": Sadsack,
@@ -50,8 +50,8 @@ function Inception_Dream(message){
 			
 			n(message);
 			j("Jaj Nicky, te kis amatőr költő.");
-			n("Hozz francia bagettet és bort, hogy igazán sznob lehessek,");
-			n("...mert ez lesz a legfennköltebb dolog, amit valaha mondtam.");
+			n("Hozz francia bagettet és bort, hogy igazi művésznek tűnjek,");
+			n("...és csak úgy szórom majd a fennkölt mondatokat.");
 			n("Egyébként...");
 			Thanks();
 		},
@@ -75,7 +75,7 @@ function Inception_Awake(message){
 	n(message);
 	n("Ellenkező esetben az egész film hazugság lenne.");
 	n("És mi értelme egy hazugságban leélt életnek?");
-	j("Jaj Nicky, te kis amatőr költő.");
+	j("Jaj Nicky, egy költő veszett el benned...");
 	j("Tényleg, összességében hogy tetszett a film?");
 
 	Choose({
@@ -83,16 +83,16 @@ function Inception_Awake(message){
 			n(message);
 			Thanks();
 		},
-		"Mehhh, hát néhányszor eléggé felkavaró volt.": function(message){
+		"Hát néhányszor eléggé felkavaró volt.": function(message){
 			n(message);
 			j("Szerintem ez volt a cél.");
 			n("Akkor küldetés teljesítve.");
 			n("Egyébként...");
 			Thanks();
 		},
-		"BWOOOOOOOOOOONG": function(message){
+		"Még most se értem teljesen, hogy miről szólt.": function(message){
 			n(message);
-			j("Ezt igenként értelmezem.");
+			j("Szóval nem tetszett.");
 			n("Egyébként...")
 			Thanks();
 		}
@@ -111,14 +111,14 @@ function Inception_Neither(message){
 	j("Vagy nagyon költői vagy, vagy nagyon depresszív.");
 
 	Choose({
-		"Költő vagyok, akiben ez csak most tudatosult.": function(message){
+		"Költő vagyok, akiben ez csak most tudatosult!": function(message){
 
 			$.im_a_poet = true;
 
 			n("Költő vagyok,");
-			n("és eddig még csak tudatában sem voltam ennek a ténynek.");
-			j("Ami tény, az tény, igazi ékköve vagy a koszorús költőknek.");
-			n("Nagyon vicces.");
+			n("és eddig még csak tudatában sem voltam ennek a ténynek!");
+			j("Ami tény, az tény, a kortárs költészet ékköve vagy...");
+			n("Na, nem kell gúnyolódni.");
 			n("Egyébként...");
 			Thanks();
 
@@ -156,15 +156,15 @@ function Sadsack(message){
 function Thanks(){
 	
 	n("...szeretném megköszönni, hogy rábeszéltél végül az Eredetre.");
-	j("Enyém az öröm.");
-	j("Különben meg kellene csinálnod az Eredet paródiáját egy ilyen webes játékban!");
-	n("Hmm, végülis...");
-	n("Vagy inkább találkozzunk holnap este!");
+	j("Nincs mit.");
+	j("Amúgy meg kellene csinálnod az Eredet paródiáját egy ilyen webes játékban!");
+	n("Senki se játszaná végig...");
+	n("Oké. Akkor programozás helyett találkozzunk holnap este!");
 
 	j("Hát...");
-	n("Remélem meg tudom győzni anyámékat, hogy engedjenek ki éjszakára is.");
+	n("Remélem meg tudom győzni anyámékat, hogy engedjenek át éjszakára is.");
 
-	j("Remélem nem azt mondtad nekik megint, hogy csak tanultunk, miközben moziban voltunk.");
+	j("Remélem nem azt mondtad nekik megint, hogy csak tanultunk.");
 	n("Majd úgy teszek, mintha egész éjjel a félévi vizsgákra készültünk volna, jó?");
 
 	j("Egy ilyen kaliberű dologról nem hazudhatsz akármeddig.");
@@ -200,12 +200,12 @@ function Hiding(){
 		j("Ahogy te is mondtad az előbb, 'mi értelme egy hazugságban leélt életnek'?");
 	}
 	if($.inception_answer=="dream"){
-		j("Ez így nem egy... hogy is mondtad az előbb? Nem egy nagy, kövér hazugság?");
+		j("Ez így nem egy... hogy is mondtad az előbb? Nem egy irdatlan nagy hazugság?");
 	}
 
 	if($.sadsack){
 		j("Az előbb azt mondtad, hogy a szíved szétszakad a szenvedéstől.");
-		j("Tudom, hogy nem csak vicceltél.");
+		j("Tudom, hogy az nem csak egy vicc volt.");
 	}
 
 	n("Jaj Jack, ugyan már...");
