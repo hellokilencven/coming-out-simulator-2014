@@ -26,14 +26,14 @@ function Start_Outro(){
 
 	// Weave - intro
 	if($.main_menu_convo_1==1){
-		p(". . .");
+		p("...");
 		N("Mondtam, hogy nem meleg unikornisokkal végződik majd a sztori.");
 	}else if($.main_menu_convo_1==3){
-		p(". . .");
+		p("...");
 		N("Megmondtam. Semmi vér, csak könnyek.");
 	}else if($.main_menu_convo_2==1){
-		p(". . .");
-		N("Igazad van. Kicsit depressziós vagyok.");
+		p("...");
+		N("Igazad volt a játék elején. Kicsit tényleg depressziós vagyok.");
 	}
 
 	Choose({
@@ -42,7 +42,7 @@ function Start_Outro(){
 			N("Engedd szabadjára az érzéseidet, barátom.");
 			Closure();
 		},
-		"Ó, jesszus, ez rideg, haver.":function(message){
+		"Ó, jesszus, ez eléggé megrázó...":function(message){
 			p(message);
 			N("Az, nem tagadom.");
 			Closure();
@@ -62,50 +62,50 @@ function Closure(){
 	Show("nicky","coffee_nicky_drink");
 	Show("cup",null);
 
-	p("Ugh.");
-	p("Vacakul érzem magam, amiért ugyanolyanok a párbeszéd buborékjaim, mint az apádnak.");
+	p("Úúú.");
+	p("Konkrétan szarul érzem magam, amiért ugyanolyanok a párbeszéd buborékjaim, mint az apádnak.");
 
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
 	N("Érdekes, hogy emlékszel rá. Csak az övé különbözik a többi karaktertől.");
-	N("Egyébként minden nevet megváltoztattam természetesen, kivéve az enyémet.");
-	N("Ezt a kicsöcsém érdekében tettem, mert ő még olyan ártatlan.");
-	N("És zépámat csak visszatettem a történetbe, mert egyébként még 2010 előtt elhagyta a családunkat.");
+	N("Egyébként természetesen minden nevet megváltoztattam, kivéve az enyémet.");
+	N("Ezt a kisöcsém miatt tettem, mert ő nem tehet semmiről.");
+	N("És az apámat is én írtam bele a történetbe, mert egyébként még 2010 előtt elhagyta a családunkat.");
 
 	if($.main_menu_convo_2==3){
-		N("Látod mondtam, ez egy igaz történeten alapuló játék tele hazugságokkal.");
+		N("Látod, megmondtam, hogy ez egy igaz történeten alapuló játék tele hazugságokkal.");
 	}
 	
-	p("Akkor is adhattál volna nekem egy másik színt.");
-	N("Akkor, amikor csináltam, nem igazán volt prioritása a dolognak.");
+	p("Akkor is adhattál volna az én szövegemnek egy másik színt.");
+	N("Nem igazán volt fontos a dolog, amikor csináltam a játékot.");
 	N("Mit gondolsz ezek után, hogy zárult végül a sztori?");
 
 	if($.main_menu_convo_2==2){
-		N("Ne aggódj, ahogy az elején is mondtam, itt nincsenek jó vagy rossz válaszok.");
+		N("Ne aggódj, ahogy a legelején is mondtam, itt nincsenek jó vagy rossz válaszok.");
 	}
 
 	$.coming_out_stories_left = 3;
 	$.order_of_stories = [];
 
 	Choose({
-		"Haver, tényleg nem tudom, nyögd már ki!.": function(message){
+		"Haver, tényleg nem tudom, nyögd már ki!": function(message){
 			p(message);
 			N("Oké-oké, már is elmondom, mi történt végül.");
 			N("...és mi történt azután, meg azután.");
 			p("MONDD MÁR!");
 			Closure_Story();
 		},
-		"Nyugtass meg, azért végül jobbara fordultak a dolgok, ugye?": function(message){
+		"Azért végül jobbra fordultak a dolgok, ugye?": function(message){
 			p(message);
-			N("Persze! Mindhárom verzióban ez történt.");
-			p("DE MI?.");
+			N("Persze! Mindhárom verzióban jobbra fordultak a dolgok.");
+			p("DE HOGYAN?");
 			Closure_Story();
 		},
 		"Virágok, szivárványok és meleg unikornisok?": function(message){
 			p(message);
 			N("Naná! Legalább egy verziónak így kellett végződnie.");
-			p("Naná, haver.");
+			p("A vágtató unikornisoknál nincs jobb happy end, ez tény.");
 			Closure_Story();
 		}
 	});
@@ -115,10 +115,10 @@ function Closure(){
 function Closure_Story(){
 
 	if($.coming_out_stories_left==3){
-		N("Melyik epilógot akarod először hallani?");
-		N("Nyugi, elmondom amúgy mind a hármat.");
+		N("Melyik lezárást akarod először hallani?");
+		N("Nyugi, elmondom majd mind a hármat.");
 	}else if($.coming_out_stories_left==2){
-		N("Oké, melyik legyen a következő?");
+		N("Oké, melyik lezárás legyen a következő?");
 	}else if($.coming_out_stories_left==1){
 		N("Végül, íme az utolsó verzió...");
 	}else{
@@ -139,9 +139,9 @@ function Closure_Story(){
 function Is_Last_Story(){
 	if($.coming_out_stories_left==0){
 		if($.asked_about && $.asked_credits){
-			p("Megint jössza válaszlehetőségekkel, holott így is, úgyis ugyanoda lyukadunk ki...");
+			p("Megint jössz a válaszlehetőségekkel, pedig tudom, hogy a végén ugyanoda lyukadunk ki...");
 		}else{
-			p("Miért csináltál több különböző válaszlehetőséget, ha mindegy hová klikkelek, mert csak egyféle vége van a sztorinak?.");
+			p("Miért csináltál több válaszlehetőséget, ha mindegy hová klikkelek, egyféle vége van a sztorinak?");
 			N("Nem tudom. Haladjunk.");
 		}
 	}
@@ -161,69 +161,69 @@ function Tell_Me_A_Lie(message){
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("Very well.");
+	N("Nagyon szépen végződött a történetem.");
 	Is_Last_Story();
 
-	N("Elmenekültem otthonról és nem volt nálam más, csak egy sporttáska, tele ehető alsónadrágokkal.");
+	N("Elmenekültem otthonról, és nem volt nálam más, csak egy sporttáska, tele ehető alsónadrágokkal.");
 	if($.im_a_poet){
-		N("Elutaztam a nagy fehér Északra. Amatőr verseket írtam idegeneknek, ebből tartottam fenn magam.");
+		N("Elutaztam a nagy fehér Északra. Abból éltem, hogy amatőr verseket írtam idegeneknek.");
 	}else{
-		N("Elutaztam a nagy fehér Északra. Nem-vicces web-játékokat csináltam, ebből tartottam fenn magam.");
+		N("Elutaztam a nagy fehér Északra. Abból éltem, hogy viccesnek szánt webes játékokat csináltam.");
 	}
 	N("Virágokat ettem. Követtem a szivárványt. És persze összebarátkoztam egy meleg unikornissal.");
-	p(". . .");
-	N("Végül Alaszkában kötöttem ki, ahol összebarátkoztam egy biszexuális párral, Bonnie-val és Clyde-dal.");
-	N("Bonnie egy harmincas évei közepén járó cougar volt, Clyde pedig egy alig negyvenes manther.");
+	p("...");
+	N("Végül Alaszkában kötöttem ki, ahol összebarátkoztam két másik biszexuálissal, Bonnie-val és Clyde-dal.");
+	N("Bonnie egy harmincas évei közepén járó nő volt, Clyde pedig egy alig negyvenes férfi.");
 
 	// FAMILY WITH BENEFITS
 	// Weave in -- top or bottom
 
 	Choose({
-		"Asszem az ehető alsó ruházkodást és kajálást is egyszerre jelent.": function(message){
+		"Asszem az ehető alsó egyszerre jelent ruházkodást és ételt is.": function(message){
 			$.outro_convo_lie = 1;
 			p(message);
-			N("A rugalmasságomnak hála kevés helyet foglalok!");
+			N("A rugalmasságomnak hála kevés helyet foglalnak el a cuccaim!");
 			Tell_Me_A_Lie_2();
 		},
-		"Ez egy elbaszott sztori a baszásról.": function(message){
+		"Ez egy elbaszott sztori a kúrásról.": function(message){
 			$.outro_convo_lie = 2;
 			p(message);
 			N("AZ ÉN SZTORIM. AZ ÉN SZABÁLYAIM.");
 			Tell_Me_A_Lie_2();
 		},
-		"...\"manther\".": function(message){
+		"...vén kecske.": function(message){
 			$.outro_convo_lie = 3;
 			p(message);
-			N("Faguarként is ismerik.");
+			N("Aki megnyalta a sót.");
 			Tell_Me_A_Lie_2();
 		}
 	});
 }
 function Tell_Me_A_Lie_2(){
 	
-	N("Befogadtam mint árvát és én lettem a kis játékszerük.");
+	N("Befogadtak, mint egy árva gyereket, és én lettem a kis játékszerük.");
 
 	if($.outro_convo_lie==1){
-		p("...Kösz mégegyszer a rugalmasságodnak.");
+		p("...újabb bizonyítéka a rugalmasságodnak.");
 	}
 
 	switch($.top_or_bottom){
-		case "top": N("Mint tudjuk, általában a féfri vagyok a párkapcsolatokban."); break;
-		case "bottom": N("Mint tudjuk, általában én vagyok a nő a párkapcsolatokban."); break;
-		case "versatile": N("Mint tudjuk, szeretek lány is lenni a párkapcsolatokban."); break;
+		case "top": N("Mint tudjuk, általában én vagyok 'a férfi' a párkapcsolatokban."); break;
+		case "bottom": N("Mint tudjuk, általában én vagyok 'a nő' a párkapcsolatokban."); break;
+		case "versatile": N("Mint tudjuk, néha én vagyok 'a lány' a párkapcsolatokban."); break;
 	}
 
 	N("Felneveltek, szerettek és a társadalom produktív tagjává tettek.");
 
 	switch($.outro_convo_lie){
-		case 2: p("És ha közelebbről megnézed ezt a repedést, benne mégtöbb repedés van."); break;
-		case 3: p("...\"MANTHER\"."); break;
+		case 2: p("És ha közelebbről megnézed ezt a repedést, benne még több apró repedés van."); break;
+		case 3: p("..."); break;
 	}
 
 	N("Ők lettek az új családom.");
 	N("Család... extrákkal.");
 
-	p(". . .");
+	p("...");
 
 	Closure_Story();
 
@@ -245,17 +245,17 @@ function Tell_Me_A_Truth(message){
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("Íme.");
+	N("Íme az igazság...");
 	Is_Last_Story();
 
 	N("Megfogadtam Jack tanácsát és kiparodizáltam az Eredetet az új játékomban.");
 	switch($.inception_answer){
-		case "awake": N("Nem mondtam, hogy Cobbs ébren volt a végén."); break;
-		case "dream": N("Nem is mondtam hogy a film csak álom lett volna."); break;
-		case "neither": N("Még mindig nem hiszem hogy számítana hogy Cobbs még álmodik-e."); break;
+		case "awake": N("Igazából mikor cseteltünk nem mondtam, hogy szerintem Cobb ébren volt az Eredet végén."); break;
+		case "dream": N("Igazából mikor cseteltünk nem mondtam, hogy az Eredet végét csak álmodja a főhős."); break;
+		case "neither": N("Még mindig nem hiszem, hogy számít, hogy az Eredet végén eldől-e a búgócsiga."); break;
 	}
-	N("Reimagine :The Game: got internet-famous-ish! A good portfolio piece.");
-	N("Néhány hónappal később gyakornok lettem az EA-nál Bay Area-ban. Messze a családomtól.");
+	N("Az elkészült játék a Reimagine egész sikeres volt.");
+	N("Ennek köszönhetően pár hónappal később programozó lettem az EA-nél. Elég messzire költöztem a családomtól.");
 
 	Choose({
 		"Őő, Electronic Arts...?": function(message){
@@ -264,24 +264,24 @@ function Tell_Me_A_Truth(message){
 
 			N("Ja, tudom, tudom.");
 			N("Már bánom, hogy ilyen kis béna játékokat csináltam, mint ez is.");
-			p("Hát bánjad is, de gyorsan.");
+			p("Hát bánhatod is.");
 			Tell_Me_A_Truth_2();
 		},
-		"És a Bay Area LGBT barát.": function(message){
+		"És a munkahelyed LMBTQ barát?": function(message){
 			$.outro_convo_truth = 2;
 			p(message);
 
-			N("Ezért hívják meleg vidéknek!");
-			p("Senki nem hívja így.");
+			N("Igen, szuper hely.");
+			p("Na, ennek örülök.");
 			Tell_Me_A_Truth_2();
 		},
-		"Ó, az EA király, ők csináltál a Simset, nem?": function(message){
+		"Ó, az EA király, ők csinálták a Simset, nem?": function(message){
 			$.outro_convo_truth = 1;
 			p(message);
 
-			N("Ja! Bár én nem azon dolgozom, hanem egy webes verzióján a--");
-			N("[NEM FEDHETEM FEL]");
-			p("Ó.");
+			N("Ja! Bár én nem azon dolgoztam, hanem egy webes verzióján a--");
+			N("[NEM FEDHETEM FEL, BOCSIKA.]");
+			p("Ó. Menő.");
 			Tell_Me_A_Truth_2();
 		}
 	});
@@ -290,15 +290,15 @@ function Tell_Me_A_Truth(message){
 function Tell_Me_A_Truth_2(){
 	
 	N("Az EA után független lettem.");
-	N("De még mindig beszélek a barátaimmal az EA-tól, és Bay Area-ban maradtam.");
+	N("De még mindig tartom a kapcsolatot az ottani kollégákkal az EA-tól, és nem is költöztem el onnan.");
 
-	N("Professzionálisan is fejlődtem.");
-	N("És szociálisan is.");
-	N("És itt... Végre kezdek magamra találni.");
+	N("Sokkal profibb lettem.");
+	N("És sokkal nyitottabb és barátságosabb.");
+	N("Végre kezdek magamra találni.");
 
 	switch($.outro_convo_truth){
-		case 1: p("Alig várom hogy bejelentsem a játékot."); break;
-		case 2: p("De komolyan, senki sem hívja meleg vidéknek."); break;
+		case 1: p("Alig várom, hogy bejelentsem a szuper új játékomat."); break;
+		case 2: p("De komolyan, az EA az egyik legjobb munkahely a világon."); break;
 		case 3: p("De most komolyan. Electronic Arts."); break;
 	}
 
@@ -321,27 +321,27 @@ function Tell_Me_A_Half_Truth(message){
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("Ahogy kívánod.");
+	N("Ahogy akarod...");
 	Is_Last_Story();
 
-	N("Ironikus, de Claire is kiderült hogy bi.");
+	N("Ironikus, de kiderült, hogy Claire is bi.");
 	N("Egy "+$.studying_subject+" órán derült ki.");
 
 	p("Micsoda csavar!");
 
 	N("Claire is bizonytalan volt az identitásában, akárcsak én.");
-	N("Mindketten tapasztalatlanok voltunk. Claire lányokkal volt csak addig én meg csak Jackkel.");
+	N("Mindketten tapasztalatlanok voltunk. Claire csak lányokkal volt korábban, én meg csak Jackkel.");
 
 	// CLAIRE AND I HELPED EACH OTHER EXPLORE OURSELVES, LESS GUILT, MORE EXPERIENCE.
 	// Weave in -- studying what
 
 	Choose({
-		"Egy tükörkép rólad, csak fordítva...": function(message){
+		"Szóval Claire olyan, mint te csak pont ellentét...": function(message){
 			$.outro_convo_half_truth = 1;
 			p(message);
-			N("Hát, a tükörképek fordítottak.");
-			p("Tudod, hogyan értem.");
-			N("De amúgy ja, cseréltünk tapasztalatokat.");
+			N("Hát, nem hiszem, hogy lehetne ellentétpárokat állítani.");
+			p("Tudod, hogy értem.");
+			N("Ja, értem. Sokban hasonlítunk. A szexuális élményeinket is megbeszéltük.");
 			Tell_Me_A_Half_Truth_2();
 		},
 		"Szóval megmutattátok egymásnak az ellenkező nem szépségeit?": function(message){
@@ -349,12 +349,12 @@ function Tell_Me_A_Half_Truth(message){
 			p(message);
 			Tell_Me_A_Half_Truth_2();
 		},
-		"Végül kefélni kezdtetek?": function(message){
+		"Végül keféltetek?": function(message){
 			$.outro_convo_half_truth = 2;
 			p(message);
-			N("Olyan mintha a húgom lenne. Az ember nem kefél a húgával.");
-			p("Nem kell ám belemenni a részletekbe.");
-			N("De amúgy ja, cseréltünk ám tapasztalatokat.");
+			N("Olyan, mintha a húgom lenne. Az ember nem kefél a húgával.");
+			p("Oké, bocs a feltételezésért.");
+			N("De amúgy beszéltünk a szexuális élményeinkről.");
 			Tell_Me_A_Half_Truth_2();
 		}
 	});
@@ -362,23 +362,23 @@ function Tell_Me_A_Half_Truth(message){
 }
 function Tell_Me_A_Half_Truth_2(){
 	
-	N("És tippeket!");
-	N("És nyelvmozdulatokat.");
-	p("Jó, nyugi, haver...");
+	N("Adtunk egymásnak tippeket.");
+	N("És gyakoroltuk egymáson a smárolást is.");
+	p("Oké... ööö... logikus.");
 
 	if($.changing_schools || !$.father_oblivious){
 		N("A végén mégis átkerültem az ő sulijába.");
 	}
 
-	N("Legjobb barátok voltunk és még mindig azok vagyunk! Ma mindketten az államokban élünk, messze az utálatos családainktól..");
-	N("Segítettünk egymásnak túllépni a bizonytalanságokon és felfedezni önmagunkat...");
-	N("Büszke bi ribancok.");
+	N("Legjobb barátok voltunk és még mindig azok vagyunk! Ma mindketten az USA-ban élünk, messze a bunkó családunktól..");
+	N("Segítettünk egymásnak túllépni a bizonytalanságokon. Felfedeztük önmagunkat.");
+	N("Büszke bi ribancok. Így kellene hívni minket.");
 
 	p("Milyen megható történet. Asszem.");
 	
-	N("És persze egymás szárnysegédei.");
+	N("És persze egymás szárnysegédjei is vagyunk.");
 
-	p(". . .");
+	p("...");
 
 	Closure_Story();
 
@@ -416,15 +416,15 @@ function Finale_1(){
 		N("A hazugságot hagytad utoljára.");
 	}
 	N("Mit mond ez el rólad?...");
-	p(". . .");
+	p("...");
 
-	p("Tudod... Általában, ha egy játéknak több lehetséges befejezése is van, nem mindegyik egyszerre játszódik le.");
-	N("Haha, azt gondoltad van itt egyáltalán befejezés?");
+	p("Tudod... Általában, ha egy játéknak több lehetséges befejezése is van, nem mindegyiket lehet egyszerre lejátszani.");
+	N("Komolyan azt gondoltad, van itt egyáltalán befejezés??");
 
 	Choose({
 		"Hadd találgassak... Ez még csak a kezdet?": function(message){
 			p(message);
-			N("Ez még csak a-- ó. Ja, így van.");
+			N("Ez még csak a ke... Ó. Ja, így van. A kezdet.");
 			Finale_2();
 		},
 		"Hát ja. Na, ennek a játéknak vége, ugye?": function(message){
@@ -432,9 +432,9 @@ function Finale_1(){
 			N("Igen, de a történet, ami az én személyes történetem, folytatódik.");
 			Finale_2();
 		},
-		"basszus milyen hosszú még ez a játék?.": function(message){
+		"Basszus milyen hosszú még ez a játék?": function(message){
 			p(message);
-			N("Nyugi, a következő kattintás az utcsó, ígérem.");
+			N("Nyugi, a következő kattintás az utolsó. Tényleg.");
 			Finale_2();
 		}
 	});
@@ -459,21 +459,21 @@ function Finale_2(){
 	p("? ? ?");
 
 	if($.punched){
-		N("Az elolvasott smseim. Hogy iskolát kellett váltanom. A pofon.");
+		N("Az elolvasott SMS-eim. Hogy iskolát kellett váltanom. A pofon.");
 	}else if($.father_oblivious==false){
-		N("Az elolvasott smseim. Hogy iskolát kellett váltanom. Az összes szóbeli sérelem.");
+		N("Az elolvasott SMS-eim. Hogy iskolát kellett váltanom. Az összes sértés, amit a fejemhez vágtak.");
 	}else if($.changing_schools){
-		N("Az elolvasott smseim. Hogy iskolát kellett váltanom. A 'melegrehab' ötlete Clairrel.");	
+		N("Az elolvasott SMS-eim. Hogy iskolát kellett váltanom. A 'melegrehab' ötlete Clairrel.");	
 	}else{
-		N("Az elolvasott smseim. Hogy nincs több szabad órám iskola után. A 'melegrehab' ötlete Clairrel.");
+		N("Az elolvasott SMS-eim. Hogy nincs több szabad órám iskola után. A 'melegrehab' ötlete Clairrel.");
 	}
 
 	N("A dolog Stockholm-szindrómás értelmében az egészért hálás vagyok.");
 
 	Choose({
 		"Mi van?": Finale_3,
-		"Mi vaan?": Finale_3,
-		"Mi vaaaaaaaaaaaaaaan?": Finale_3
+		"Mi vaan???": Finale_3,
+		"Mi vaaaaaaaaaaaaaaan???!!!!?!?!?": Finale_3
 	});
 
 }
@@ -485,8 +485,8 @@ function Finale_3(message){
 	PlaySound("sfx","laptop_pack");
 	Show("nicky","coffee_nicky_packup_3");
 
-	N("Igen, nagyon!");
-	N("Nem lettem volna ilyen motivált abban, hogy a saját sorsom kovácsa legyek... ha ezt megelőzően nem lett volna az életem totálisan szar.");
+	N("Igen, hálás vagyok!");
+	N("Nem lettem volna ilyen motivált abban, hogy a saját sorsom kovácsa legyek... ha ezt megelőzően nem lett volna az életem egy kalap szar.");
 
 	PlaySound("sfx","laptop_pack_2");
 	Show("nicky","coffee_nicky_packup_4");
@@ -494,17 +494,17 @@ function Finale_3(message){
 	N("A három történetem... Hazugság,  igazság, féligazság... legalább egy dolog igaz mindháromra.");
 	N("Hogy idővel jobb lesz.");
 
-	p(". . .");
+	p("...");
 
 	N("És...");
 	N("Végül...");
-	N("Ebben a hosszú, buta és fájdalmas játékban...");
+	N("Ebben a hosszú, egyszerű és kicsit fájdalmas játékban...");
 	N("Ahol azok ellen játszottam, akiknek mellettem kellett volna állniuk...");
 
-	p(". . .");
+	p("...");
 
 	N("Én nyertem.");
-	N(". . .");
+	N("...");
 	N("Én nyertem.");
 
 	// HACK - Just clear dialogue & stuff.
@@ -546,8 +546,8 @@ function Finale_4(message){
 	N("Az életben nincs ismétlés.");
 	p("...")
 	p("...")
-	p("Köszi a segítséget Marci.")
-	p("<3")
+	p("Oké. Értem.")
+	p("Köszi a játékot!")
 	
 
 	Wait(800);
