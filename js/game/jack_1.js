@@ -24,7 +24,7 @@ function Start_Jack_1(){
 	n("Jaa, szóval ezt mondta!");
 	n("Kicsit elbambultam, csak azt vettem észre, hogy rajtam kívül mindenki röhög.");
 	j("Legközelebb ne a moziban aludj, hanem előtte éjszaka.");
-	j("Amúgy szerinted mi volt a búgócsigás jelenetet a végén? Azt álmodta vagy akkor már ébren volt?");
+	j("Amúgy szerinted mi volt az a búgócsigás jelenetet a végén? Azt álmodta, vagy akkor már ébren volt?");
 
 	Choose({
 		"Csak álmodta.": Inception_Dream,
