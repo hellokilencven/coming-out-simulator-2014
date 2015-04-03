@@ -19,12 +19,12 @@ function Start_Jack_1(){
 	/////////////////////////////
 
 	j("És amikor csak így egyszerűen kijelentette, hogy");
-	j("'Megvettem a légitársaságot.');
+	j("'Vettem egy légitársaságot';");
 	j("...az valami zseniális volt!");
 	n("Jaa, szóval ezt mondta!");
-	n("Kicsit elbambultam, csak azt vettem észre, hogy a mindenki röhög.");
-	j("Legközelebb ne a mozifilm alatt aludj, hanem előtte éjszaka.");
-	j("Amúgy szerinted mi volt a búgócsigás jelenetet a végén? Azt is csak álmodta, vagy akkor már ébren volt?");
+	n("Én lemaradtam róla, de a nézőtéren mindenki ezen röhögött.");
+	j("Akkor vagy nézd ezentúl felirattal a filmeket, vagy pedig moss fület gyakrabban.");
+	j("Tényleg, te hogyan értelmezted a pörgettyűs jelenetet a végén? Szerinted azt is csak álmodta, vagy pedig már ébren volt?");
 
 	Choose({
 		"Csak álmodta.": Inception_Dream,
@@ -49,9 +49,9 @@ function Inception_Dream(message){
 			$.im_a_poet = true;
 			
 			n(message);
-			j("Jaj Nicky, egy költő veszett el benned...");
-			n("Hozz francia bagettet és bort, hogy igazi művésznek tűnjek,");
-			n("...és csak úgy szórom majd a fennkölt mondatokat.");
+			j("Jaj Nicky, te kis amatőr költő.");
+			n("Hozz francia bagettet és bort, hogy igazán sznob lehessek,");
+			n("...mert ez lesz a legfennköltebb dolog, amit valaha mondtam.");
 			n("Egyébként...");
 			Thanks();
 		},
@@ -75,7 +75,7 @@ function Inception_Awake(message){
 	n(message);
 	n("Ellenkező esetben az egész film hazugság lenne.");
 	n("És mi értelme egy hazugságban leélt életnek?");
-	j("Jaj Nicky, egy költő veszett el benned...");
+	j("Jaj Nicky, te kis amatőr költő.");
 	j("Tényleg, összességében hogy tetszett a film?");
 
 	Choose({
@@ -111,13 +111,13 @@ function Inception_Neither(message){
 	j("Vagy nagyon költői vagy, vagy nagyon depresszív.");
 
 	Choose({
-		"Költő vagyok, akiben ez csak most tudatosult!": function(message){
+		"Költő vagyok, akiben ez csak most tudatosult.": function(message){
 
 			$.im_a_poet = true;
 
 			n("Költő vagyok,");
-			n("és eddig még csak tudatában sem voltam ennek a ténynek!");
-			j("Ami tény, az tény, igazi ékköve vagy a kortárs költőknek.");
+			n("és eddig még csak tudatában sem voltam ennek a ténynek.");
+			j("Ami tény, az tény, igazi ékköve vagy a koszorús költőknek.");
 			n("Nagyon vicces.");
 			n("Egyébként...");
 			Thanks();
@@ -157,14 +157,14 @@ function Thanks(){
 	
 	n("...szeretném megköszönni, hogy rábeszéltél végül az Eredetre.");
 	j("Enyém az öröm.");
-	j("Amúgy meg kellene csinálnod az Eredet paródiáját egy ilyen webes játékban!");
-	n("Senki se játszaná végig...");
-	n("Akkor programozás helyett inkább találkozzunk holnap este!");
+	j("Különben meg kellene csinálnod az Eredet paródiáját egy ilyen webes játékban!");
+	n("Hmm, végülis...");
+	n("Vagy inkább találkozzunk holnap este!");
 
 	j("Hát...");
 	n("Remélem meg tudom győzni anyámékat, hogy engedjenek ki éjszakára is.");
 
-	j("Remélem nem azt mondtad nekik megint, hogy csak tanultunk.");
+	j("Remélem nem azt mondtad nekik megint, hogy csak tanultunk, miközben moziban voltunk.");
 	n("Majd úgy teszek, mintha egész éjjel a félévi vizsgákra készültünk volna, jó?");
 
 	j("Egy ilyen kaliberű dologról nem hazudhatsz akármeddig.");
@@ -205,7 +205,7 @@ function Hiding(){
 
 	if($.sadsack){
 		j("Az előbb azt mondtad, hogy a szíved szétszakad a szenvedéstől.");
-		j("Tudom, hogy az nem csak egy vicc volt.");
+		j("Tudom, hogy nem csak vicceltél.");
 	}
 
 	n("Jaj Jack, ugyan már...");
@@ -215,7 +215,7 @@ function Hiding(){
 		n("Ahogy azt már mondtam, te és a szüleid megrögzött hippik vagytok!");
 		n("Amikor nálatok vagyok, könyökölni lehet a fűszagra.");
 		j("Hé! Csak minden másnap tépünk, oké?");
-		n("Mindjárt más.");
+		n("Remek.");
 		j("A lényeg, hogy a szüleim tökre támogatják az előbújást.");
 	}else{
 		j("És ami még fontosabb, velem is nagyon megértőek voltak!");
@@ -225,7 +225,7 @@ function Hiding(){
 	j("Miért gondolod, hogy pont a szüleid nem lennének megértőek?");
 
 	Choose({
-		"Tradicionális ázsiai család vagyunk. A szüleim nagyon homofóbok.": Hiding_2,
+		"Az ázsiai szülők általában nagyon homofóbok.": Hiding_2,
 		"Nem tudom... Talán tényleg csak rá kellene szánnom magam.": Hiding_2,
 		"Ők a tanulást leszámítva semmmit sem támogatnak.": Hiding_2
 	});
@@ -241,18 +241,18 @@ function Hiding_2(message){
 	}
 
 	j("Talán csak máshogy kellene hozzáállnod a beszélgetéshez.");
-	j("Velem is mindig csak cseten kommunikálsz telefonálás helyett.");
+	j("Velem is mindig csak üzenetekben kommunikálsz telefonálás helyett.");
 	j("...mert azt gondolod, az emberek nem szívesen hallgatnának végig.");
-	j("De ők a szüleid és feltétel nélkül szeretnek téged.");
+	j("De ők a szüleid és szeretnek téged.");
 
 	n("Bárcsak...");
 
-	j("Oké, a csetelés is a kommunikáció egy fajtája.");
+	j("Oké, az üzengetés is a kommunikáció egy fajtája.");
 	j("Egy üres, jellegtelen, érzéketlen és pontatlan formája.");
 
 	if($.im_a_poet){
 		n("Heh, te majdnem olyan jó lennél amatőr költőnek, mint én.");
-		j("Leszámítva, hogy én tényleg tudnék verseket írni.");
+		j("Leszámítva, hogy én igazi verseket is írok.");
 	}
 
 	if($.coming_out_readiness=="yes"){
@@ -266,7 +266,7 @@ function Hiding_2(message){
 	Choose({
 		"Ma este?! Kizárt.": Hiding_3,
 		"Hát... Megpróbálhatom.": Hiding_3,
-		"Inkább csak utalok rá. Óvatosan.": Hiding_3
+		"Inkább majd csak utalok rá óvatosan.": Hiding_3
 	});
 
 }
@@ -285,9 +285,9 @@ function Hiding_3(message){
 	n("Mi?");
 	j("A véleményeddel, hogy mit jelentett a film utolsó jelenete.");
 	switch($.inception_answer){
-		case "dream": j("Cobb szerintem is benne ragadt egy álomban, és hazugságban élt tovább."); break;
-		case "awake": j("Cobb szerintem is csatlakozott a családjához a valóságban."); break;
-		case "neither": j("Szerintem sem számít az igazság, amíg Cobb elégedett az életével."); break;
+		case "dream": j("Cobb szerintem is benne ragadt egy álomban és hazugságban élt tovább."); break;
+		case "awake": j("Cobb szerintem is csatlakozhatott a családjához a valóságban."); break;
+		case "neither": j("Szerintem sem számít, amíg Cobb elégedett az életével."); break;
 	}
 	n("Oh.");
 	j("Rendben.");
