@@ -84,7 +84,7 @@ function Start_Dinner_2_2(message){
 	m("Már nagyon-nagyon ideje lenne "+$.studying_subject+"ból jobb jegyeket szerezned.");
 	n("...");
 	m("Szóval, holnap a könyvtárban leszek.");
-	m("Majd odaköszönök néha, amikor épp nem annyira aktívan tanulsz");
+	m("Majd odaköszönök néha, amikor épp khm... kevésbé aktívan tanulsz.");
 	n("Igazából Jackhez megyek át tanulni.");
 	m("Megint?");
 	m("Túl sok időt töltesz vele.");
