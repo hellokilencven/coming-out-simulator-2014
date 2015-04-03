@@ -252,7 +252,7 @@ function Hiding_2(message){
 
 	if($.im_a_poet){
 		n("Ilyen modoros szavakkal, te is majdnem olyan jó lennél amatőr költőnek, mint én.");
-		j("Áá, én inkább az a rapper típus vagyok.");
+		j("Azzal a különbséggel, hogy én tényleg írok verseket...");
 	}
 
 	if($.coming_out_readiness=="yes"){
