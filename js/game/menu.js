@@ -8,7 +8,7 @@ function Start(){
 	Show("cup","cup_steam",{x:44,y:359});
 	Show("nicky","coffee_nicky_still");
 
-	PlaySound("bg","coffeehouse",{loop:-1, volume:0.4});
+	PlaySound("bg","coffeehouse",{loop:-1, volume:0.3});
 
 	//////////////////////////////
 
