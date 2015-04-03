@@ -21,7 +21,7 @@ function Start_Dinner_1(){
 	Choose({
 		"Aaaaanyaa?": Waiting_1,
 		"Aaaapaa?": Waiting_1,
-		"Hé, valaki?": Waiting_1
+		"Hahó, valaki?": Waiting_1
 	});
 
 }
@@ -64,7 +64,7 @@ function Waiting_2(message){
 	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
-		"Kussolj el, te kakofón kandúr!": function(message){
+		"Basszus, kussolj el, te fröccsöntött kandúr!": function(message){
 			n(message);
 
 			Show("mom","mom_stand");
@@ -72,17 +72,17 @@ function Waiting_2(message){
 			PlaySound("clock","dinner_ticking",{loop:-1});
 
 			if($.im_a_poet){
-				m("Egy barátodtól tanulsz költészetet?");
+				m("Látom jól elbeszélgettek.");
 			}else{
-				m("Költői.");
+				m("Picit hasonlítotok is egymásra.");
 			}
 
 			Show("nicky","dinner_nicky_sit");
-			n("Ó, szia anya.");
+			n("Ó, szia anya!");
 			
 			Waiting_End();
 		},
-		"Uhh, miért vettünk mi ilyesmit?": function(message){
+		"Fú, miért vettünk mi ilyesmit?": function(message){
 			n(message);
 
 			Show("mom","mom_stand");
@@ -92,27 +92,27 @@ function Waiting_2(message){
 			m("Ezt a nagyapád adta nekünk.");
 
 			Show("nicky","dinner_nicky_sit");
-			n("Ó, szia anya.");
+			n("Ó, szia anya!");
 			
 			Waiting_End();
 		},
 		"Miu! Miu! Miu! Miu!": function(message){
 			
 			n("Miu.");
-			n("Miu!");
+			n("Miu! MIU!");
 
 			Show("nicky","dinner_nicky_outrage");
-			n("MIU!");
+			n("MIU! MIU!! MIIUUUU!!!");
 
 			Show("mom","mom_stand");
 
-			m("Nick, mit csinálsz?...");
+			m("Nick, mi a jóistent csinálsz?");
 
 			Show("clock","clock_ticking");
 			PlaySound("clock","dinner_ticking",{loop:-1});
 			Show("nicky","dinner_nicky_sit");
 
-			n("MIUuuhh nem láttalak. Khm. Szia anya.");
+			n("MIUuu... ööö... Khm. Nem is hallottam, hogy itt vagy. Szia anya!");
 
 			Waiting_End();
 		}
