@@ -159,9 +159,9 @@ function Thanks(){
 	j("Nincs mit.");
 	j("Amúgy meg kellene csinálnod az Eredet paródiáját egy ilyen webes játékban!");
 	n("Senki se játszaná végig...");
-	n("Oké. Akkor programozás helyett találkozzunk holnap este!");
+	n("Programozás helyett inkább találkozzunk holnap este!");
 
-	j("Hát...");
+	j("Szuper ötlet!");
 	n("Remélem meg tudom győzni anyámékat, hogy engedjenek át éjszakára is.");
 
 	j("Remélem nem azt mondtad nekik megint, hogy csak tanultunk.");
@@ -212,20 +212,20 @@ function Hiding(){
 	j("Én már előbújtam a szüleimnek tavaly.");
 	if($.hippies){
 		n("Ez így egyáltalán nem fair!");
-		n("Ahogy azt már mondtam, te és a szüleid megrögzött hippik vagytok!");
+		n("Te és a szüleid megrögzött hippik vagytok!");
 		n("Amikor nálatok vagyok, könyökölni lehet a fűszagra.");
-		j("Hé! Csak minden másnap tépünk, oké?");
-		n("Remek.");
+		j("Hé! Az a lábfájásukra van, oké?");
+		n("Annyi spangli után csoda, hogy érzik a lábukat.");
 		j("A lényeg, hogy a szüleim tökre támogatják az előbújást.");
 	}else{
-		j("És ami még fontosabb, velem is nagyon megértőek voltak!");
+		j("Velem is nagyon megértőek voltak!");
 	}
 
 	j("Most Kanadában vagy. Itt az emberek többsége pozitívan viszonyul az ilyesmihez.");
-	j("Miért gondolod, hogy pont a szüleid nem lennének megértőek?");
+	j("Miért gondolod, hogy pont a szüleid, akik feltétel nélkül szeretnek nem lennének megértőek?");
 
 	Choose({
-		"Az ázsiai szülők általában nagyon homofóbok.": Hiding_2,
+		"Tradicionális ázsiai család vagyunk. A szüleim nem ennyire toleránsak.": Hiding_2,
 		"Nem tudom... Talán tényleg csak rá kellene szánnom magam.": Hiding_2,
 		"Ők a tanulást leszámítva semmmit sem támogatnak.": Hiding_2
 	});
@@ -242,17 +242,17 @@ function Hiding_2(message){
 
 	j("Talán csak máshogy kellene hozzáállnod a beszélgetéshez.");
 	j("Velem is mindig csak üzenetekben kommunikálsz telefonálás helyett.");
-	j("...mert azt gondolod, az emberek nem szívesen hallgatnának végig.");
-	j("De ők a szüleid és szeretnek téged.");
+	j("...mert azt gondolod, hogy az emberek nem szívesen hallgatnának végig.");
+	j("De ők a szüleid és mindig szeretni fognak téged.");
 
-	n("Bárcsak...");
+	n("Bár így lenne...");
 
 	j("Oké, az üzengetés is a kommunikáció egy fajtája.");
-	j("Egy üres, jellegtelen, érzéketlen és pontatlan formája.");
+	j("Egy kiüresedett, felszínes és lélektelen formája.");
 
 	if($.im_a_poet){
-		n("Heh, te majdnem olyan jó lennél amatőr költőnek, mint én.");
-		j("Leszámítva, hogy én igazi verseket is írok.");
+		n("Ilyen modoros szavakkal, te is majdnem olyan jó lennél amatőr költőnek, mint én.");
+		j("Áá, én inkább az a rapper típus vagyok.");
 	}
 
 	if($.coming_out_readiness=="yes"){
@@ -275,26 +275,26 @@ function Hiding_3(message){
 	
 	n(message);
 	j(". . .");
-	n("Nem akarom sokkolni a prűd lelkivilágukat.");
+	n("Nem akarom sokkolni az álszent lelkivilágukat.");
 	n("De valahogy meg kell győznöm őket, ha át akarok menni hozzád holnap este.");
 	n("Majd felhozom a tanulást, hogy mennyit segítesz benne.");
 	j(". . .");
 	n("Kész van a vacsora, le kell mennem a földszintre.");
 
 	j("Hé... amúgy én egyetértek veled.");
-	n("Mi?");
+	n("Miben?");
 	j("A véleményeddel, hogy mit jelentett a film utolsó jelenete.");
 	switch($.inception_answer){
-		case "dream": j("Cobb szerintem is benne ragadt egy álomban és hazugságban élt tovább."); break;
-		case "awake": j("Cobb szerintem is csatlakozhatott a családjához a valóságban."); break;
-		case "neither": j("Szerintem sem számít, amíg Cobb elégedett az életével."); break;
+		case "dream": j("Cobb szerintem is benne ragadt egy álomban, és hazugságban élt tovább."); break;
+		case "awake": j("Cobb szerintem is a valósgban csatlakozott a családjához."); break;
+		case "neither": j("Szerintem sem számít az igazság, addig a pontig, amíg Cobb boldognak érzi magát."); break;
 	}
-	n("Oh.");
-	j("Rendben.");
+	n("Aha. Értem.");
+	j("Akkor jó.");
 	if($.coming_out_readiness=="maybe"){
-		j("Azért remélem meggondolod magad és végül elmondod nekik'.");
+		j("Azért remélem meggondolod magad és elmondod nekik az igazat.");
 	}
-	j("Sok szerencsét. Majd írj egy óra múlva.");
+	j("Sok szerencsét. Mindenképp írj egy óra múlva!");
 
 	var insult = "";
 	if($.hippies) insult+=" kis hippi";
