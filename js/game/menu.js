@@ -145,7 +145,7 @@ function Play_3(){
 	N("A játék során a 2010-es énemmel fogsz játszani.");
 	if(!$.asked_credits){
 		N("Ha nem olvastad el a háttérsztorit, akkor annyit rólam, hogy a (még nem teljesen hivatalos) nevem Nick Case. Csak, hogy tudd.");
-		p("Öhm, oké.");
+		p("Ööö, oké.");
 	}
 
 	var whatISay;
