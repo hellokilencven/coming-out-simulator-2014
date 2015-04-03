@@ -90,7 +90,8 @@ function Play(message){
 			$.main_menu_convo_1 = 3;
 
 			p(message);
-			N("Hű, kicsit eltúlzod a dolgod, a történetem azért nem ENNYIRE tragikus.");
+			N("Hű, kicsit eltúlzod a dolgot.");
+			N("A történetem azért nem ENNYIRE tragikus...");
 			p("VÉÉÉÉR!!");
 			N("Haver, kicsit túl sok horrort néztél...");
 			Play_2();
