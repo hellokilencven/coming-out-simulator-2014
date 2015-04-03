@@ -49,9 +49,9 @@ function Inception_Dream(message){
 			$.im_a_poet = true;
 			
 			n(message);
-			j("Jaj Nicky, te kis amatőr költő.");
+			j("Jaj Nicky, egy melegszívű költő veszett el benned.");
 			n("Hozz francia bagettet és bort, hogy igazi művésznek tűnjek,");
-			n("...és csak úgy szórom majd a fennkölt mondatokat.");
+			n("...és csak úgy szórom majd az ilyen fennkölt bókokat.");
 			n("Egyébként...");
 			Thanks();
 		},
