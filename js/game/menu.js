@@ -290,5 +290,8 @@ function About(message){
 			}
 		});
 	}
-
+}
+function menu_End(){
+	Clear();
+	Start_Jack_1();
 }
